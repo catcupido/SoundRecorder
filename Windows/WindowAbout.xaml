@@ -1,0 +1,98 @@
+﻿<!-- 
+Sound RecorderCopyright (C) by Sergey A Kryukov, 2014http://www.SAKryukov.org
+-->
+
+<Window x:Class="SoundRecorder.Windows.WindowAbout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	SizeToContent="WidthAndHeight" ResizeMode="NoResize"
+    Style="{DynamicResource windowFont}">
+	<Window.Resources>        
+		<ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/SharedResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <Canvas x:Key="logo" Width="2721" Height="2721">
+				<Canvas.Resources>
+					<LinearGradientBrush xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="linearGradient3943" MappingMode="RelativeToBoundingBox" StartPoint="0,0" EndPoint="1,1">
+						<LinearGradientBrush.GradientStops>
+							<GradientStopCollection>
+								<GradientStop Color="#FF827DFF" Offset="0"/>
+								<GradientStop Color="#FFFFCEF6" Offset="1"/>
+							</GradientStopCollection>
+						</LinearGradientBrush.GradientStops>
+					</LinearGradientBrush>
+					<LinearGradientBrush xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="linearGradient3949" MappingMode="Absolute" StartPoint="2320,0" EndPoint="2320,2720">
+						<LinearGradientBrush.GradientStops>
+							<GradientStopCollection>
+								<GradientStop Color="#FF827DFF" Offset="0"/>
+								<GradientStop Color="#FFFFCEF6" Offset="1"/>
+							</GradientStopCollection>
+						</LinearGradientBrush.GradientStops>
+					</LinearGradientBrush>
+				</Canvas.Resources>
+				<Canvas>
+					<Canvas.RenderTransform>
+						<TranslateTransform X="2080.5" Y="948.13782"/>
+					</Canvas.RenderTransform>
+					<Rectangle xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="-2080" Canvas.Top="-948" Width="2720" Height="2720" Fill="{StaticResource linearGradient3949}" Stroke="#FF000000"/>
+					<Canvas>
+						<Canvas>
+							<Canvas.RenderTransform>
+								<TranslateTransform X="-1440" Y="-80"/>
+							</Canvas.RenderTransform>
+							<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Fill="#FF000000">
+								<Path.Data>
+									<PathGeometry Figures="m -700 -587.625 c -353.4622 0 -640 286.53776 -640 640 l 0 600 0 40 1.2188 0 c 20.6539 334.8233 298.7572 600 638.7812 600 340.024 0 618.096 -265.1767 638.75 -600 l 1.25 0 0 -40 0 -600 c 0 -353.46224 -286.5378 -640 -640 -640 z m -920 1000 0 280 0.875 0 c 19.8033 462.8656 381.6021 837.1449 839.125 876.5625 l 0 243.4375 160 0 0 -243.4375 c 457.5229 -39.4176 819.3217 -413.6969 839.125 -876.5625 l 0.875 0 0 -240 -160 0 0 240 -1.0625 0 c -20.81 401.1337 -352.6249 720 -758.9375 720 -406.3127 0 -738.1275 -318.8663 -758.9375 -720 l -1.0625 0 0 -280 -160 0 z" FillRule="nonzero"/>
+								</Path.Data>
+								<Path.RenderTransform>
+									<TranslateTransform X="1420" Y="40"/>
+								</Path.RenderTransform>
+							</Path>
+						</Canvas>
+						<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Fill="#FFFFFFFF">
+							<Path.Data>
+								<PathGeometry Figures="m -520 -147.62502 c -22.16 0 -40 17.84 -40 40 0 22.160003 17.84 40.000003 40 40.000003 l 435.03125 0 c -3.3967 -27.235944 -8.51031 -53.938043 -15.21875 -80.000003 l -419.8125 0 z" FillRule="nonzero"/>
+							</Path.Data>
+						</Path>
+						<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Fill="#FFFFFFFF">
+							<Path.Data>
+								<PathGeometry Figures="m -520 12.374983 c -22.16 0 -40 17.84 -40 40 0 22.16 17.84 40 40 40 l 440 0 0 -80 -440 0 z" FillRule="nonzero"/>
+							</Path.Data>
+						</Path>
+						<Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Fill="#FFFFFFFF">
+							<Path.Data>
+								<PathGeometry Figures="m -520 172.375 c -22.16 0 -40 17.84 -40 40 0 22.16 17.84 40 40 40 l 440 0 0 -80 -440 0 z" FillRule="nonzero"/>
+							</Path.Data>
+						</Path>
+					</Canvas>
+				</Canvas>
+			</Canvas>
+		</ResourceDictionary>
+	</Window.Resources>
+    <Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<Border Padding="12">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="120"/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+				<Viewbox Stretch="Uniform" Child="{StaticResource logo}"/>
+				<TextBlock Padding="12, 12, 0, 12" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+					<TextBlock Name="textBlockProduct" Padding="0, 4, 0, 4"/>
+					<LineBreak/>
+					<TextBlock Name="texBlockCopyright" Padding="0, 4, 0, 4"/>					
+				</TextBlock>
+			</Grid>
+		</Border>
+		<StatusBar Grid.Row="1" Padding="4" BorderBrush="Black" BorderThickness="0, 0.6, 0, 0" VerticalAlignment="Bottom">
+			<StatusBarItem HorizontalContentAlignment="Center">
+				<Button IsCancel="True" IsDefault="True" Name="buttonOk" Padding="28, 2, 28, 2" HorizontalAlignment="Center">O_K</Button>
+			</StatusBarItem>
+		</StatusBar>
+	</Grid>
+</Window>

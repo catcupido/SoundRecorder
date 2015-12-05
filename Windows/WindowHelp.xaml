@@ -1,0 +1,47 @@
+﻿<!-- 
+Sound RecorderCopyright (C) by Sergey A Kryukov, 2014http://www.SAKryukov.org
+-->
+
+<Window x:Class="SoundRecorder.Windows.WindowHelp"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    Style="{DynamicResource windowFont}"
+    Height="480" Width="640">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/SharedResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <system:Double x:Key="buttonWidth">50</system:Double>
+            <Style x:Key="webdingsButton" TargetType="{x:Type Button}">
+                <Setter Property="FontFamily" Value="Webdings"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="Padding" Value="0, 1, 0, 0"/>
+                <Setter Property="Width" Value="{StaticResource buttonWidth}"/>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>   
+        <WebBrowser Name="browser"/>
+        <StatusBar Grid.Row="1" VerticalAlignment="Bottom" BorderThickness="0, 1, 0, 0" BorderBrush="Black" Padding="8, 2, 1, 0">
+            <StatusBarItem Name="status">Loading...</StatusBarItem>
+            <StatusBarItem>
+                <Button Name="buttonBack" Style="{StaticResource webdingsButton}">3</Button>
+            </StatusBarItem>
+            <StatusBarItem>
+                <Button Name="buttonForward" Style="{StaticResource webdingsButton}">4</Button>
+            </StatusBarItem>
+            <StatusBarItem>
+                <Button Name="buttonHome" Width="{StaticResource buttonWidth}" Height="{Binding ActualHeight, ElementName=buttonBack}">_Home</Button>
+            </StatusBarItem>
+            <StatusBarItem HorizontalContentAlignment="Stretch">
+                <TextBox Name="Uri" IsReadOnly="True" Focusable="True" Height="{Binding ActualHeight, ElementName=buttonBack}"/>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>
